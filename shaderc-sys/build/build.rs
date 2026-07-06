@@ -71,6 +71,7 @@ fn build_shaderc_unix(shaderc_dir: &PathBuf, use_ninja: bool, target_os: &str) -
         .define("SHADERC_SKIP_TESTS", "ON")
         // SPIRV-Tools options
         .define("SPIRV_SKIP_EXECUTABLES", "ON")
+        .define("SPIRV_SKIP_TESTS", "ON")
         .define("SPIRV_WERROR", "OFF");
     if use_ninja {
         config.generator("Ninja");
@@ -101,6 +102,7 @@ fn build_shaderc_msvc(shaderc_dir: &PathBuf) -> PathBuf {
         .define("SHADERC_SKIP_TESTS", "ON")
         // SPIRV-Tools options
         .define("SPIRV_SKIP_EXECUTABLES", "ON")
+        .define("SPIRV_SKIP_TESTS", "ON")
         .define("SPIRV_WERROR", "OFF")
         .generator("Ninja");
 
